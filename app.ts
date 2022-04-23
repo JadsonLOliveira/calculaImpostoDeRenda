@@ -1,4 +1,4 @@
-let numero: number = 5;
-let titulo: string = 'TESTE';
+let numero: number = 0;
+let titulo: string = 'Jose';
 
 console.log(`nome: ${titulo}, idade: ${numero}`);
