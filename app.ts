@@ -103,3 +103,11 @@ dadoUsuario.vl_salarioLiquido = dadoUsuario.vl_SalarioBruto - dadoUsuario.descon
 
 //Calculo para saber o desconto do Ir
 dadoUsuario.vl_DescontadoIr = ((vl_ComDescontoInss * dadoUsuario.descontoIr ) - dadoUsuario.parcelaDedutivelIr )
+
+console.log('---------- IMPOSTO DE RENDA ----------');
+console.log('');
+console.log(' Nome: ' + dadoUsuario.nome + ' \n Salario bruto: ' + dadoUsuario.vl_SalarioBruto + ' \n Faixa do INSS: ' + dadoUsuario.faixaDescontoInss.toFixed(1) + '% \n Valor descontado para o INSS: ' + vl_DescontoInss.toFixed(2) + '\n Valor do Desconto Ir: ' + dadoUsuario.vl_DescontadoIr.toFixed(2) + '\n Valor salario liquido: ' + dadoUsuario.vl_salarioLiquido.toFixed(2));
+console.log('');
+console.log('--------------------------------------');
+console.log(' By FIlipe Querino e Jadson Oliveria ');
+console.log('');
