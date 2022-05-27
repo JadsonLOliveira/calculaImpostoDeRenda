@@ -34,11 +34,11 @@ class Usuario {
     }
 
     setVl_TotalDeHorasExtra(vl_TotalDeHorasExtra: number): void {
-        this.dadosUsuario.vl_TotalDeHorasExtra = vl_TotalDeHorasExtra
+        this.dadosUsuario.vl_TotalDeHorasExtra = ((this.dadosUsuario.vl_SalarioBruto / 200) * 1.5) * vl_TotalDeHorasExtra
     }
 
     setFaixaDescontoInss(): void {
-        let salario = this.dadosUsuario.vl_SalarioBruto
+        let salario = this.dadosUsuario.vl_SalarioBruto + this.dadosUsuario.vl_TotalDeHorasExtra
         if (salario <= 1212.00) {
             this.dadosUsuario.faixaDescontoInss = 0.075;
         }
@@ -57,7 +57,6 @@ class Usuario {
         let salario = this.dadosUsuario.vl_SalarioBruto,
             vl_BaseFaixa = 0,
             vl_Agregado = 0;
-
 
         if (salario <= 1212.00) {
             vl_Agregado = 0;
@@ -80,7 +79,7 @@ class Usuario {
     }
 
     setFaixaDescontoIr(): void {
-        let salarioComDescontoINSS = this.dadosUsuario.vl_SalarioBruto - this.dadosUsuario.vl_DescontoInss;
+        let salarioComDescontoINSS = (this.dadosUsuario.vl_SalarioBruto + this.dadosUsuario.vl_TotalDeHorasExtra) - this.dadosUsuario.vl_DescontoInss;
         if (salarioComDescontoINSS <= 1903.98) {
             this.dadosUsuario.faixaDescontoIr = 0;
         }
