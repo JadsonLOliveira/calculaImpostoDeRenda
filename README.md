@@ -1,3 +1,3 @@
 # calculaImpostoDeRenda
 
-Rode no terminal: npm run dev argv[2] argv[3] argv[4].
+Rode no terminal: npm run dev informando :Nome, :Salario e quantidade de horas extras. 
