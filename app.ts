@@ -2,10 +2,10 @@ interface DadosUsuario {
     nome: string;
     vl_SalarioBruto: number;
     vl_TotalDeHorasExtra: number;
-    faixaDescontoInss: number,
-    vl_DescontoInss: number,
-    faixaDescontoIr: number,
-    vl_DescontadoIr: number,
+    faixaDescontoInss: number;
+    vl_DescontoInss: number;
+    faixaDescontoIr: number;
+    vl_DescontadoIr: number;
     vl_salarioLiquido: number;
 }
 
@@ -34,7 +34,8 @@ class Usuario {
     }
 
     setVl_TotalDeHorasExtra(vl_TotalDeHorasExtra: number): void {
-        this.dadosUsuario.vl_TotalDeHorasExtra = ((this.dadosUsuario.vl_SalarioBruto / 200) * 1.5) * vl_TotalDeHorasExtra
+        let vl_HorasExtra = vl_TotalDeHorasExtra ? vl_TotalDeHorasExtra : 0 
+        this.dadosUsuario.vl_TotalDeHorasExtra = ((this.dadosUsuario.vl_SalarioBruto / 200) * 1.5) * vl_HorasExtra;
     }
 
     setFaixaDescontoInss(): void {

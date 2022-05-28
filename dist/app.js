@@ -19,7 +19,8 @@ class Usuario {
         this.dadosUsuario.vl_SalarioBruto = vl_SalarioBruto;
     }
     setVl_TotalDeHorasExtra(vl_TotalDeHorasExtra) {
-        this.dadosUsuario.vl_TotalDeHorasExtra = ((this.dadosUsuario.vl_SalarioBruto / 200) * 1.5) * vl_TotalDeHorasExtra;
+        let vl_HorasExtra = vl_TotalDeHorasExtra ? vl_TotalDeHorasExtra : 0;
+        this.dadosUsuario.vl_TotalDeHorasExtra = ((this.dadosUsuario.vl_SalarioBruto / 200) * 1.5) * vl_HorasExtra;
     }
     setFaixaDescontoInss() {
         let salario = this.dadosUsuario.vl_SalarioBruto + this.dadosUsuario.vl_TotalDeHorasExtra;
